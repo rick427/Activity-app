@@ -74,10 +74,13 @@ export default {
         this.isFormDisplay = !this.isFormDisplay;
       },
       createActivity () {
-        //debugger
-        createActivityAPI({...this.newActivity}).then(activity => {
-            //debugger
-            this.$emit('activityCreated', {...activity})
+        createActivityAPI({...this.newActivity})
+         .then(activity => {
+             this.newActivity.title = ''
+             this.newActivity.notes = ''
+             this.newActivity.category= ''
+             this.isFormDisplayed = false
+             this.$emit('activityCreated', {...activity})
         })
       }
     }
