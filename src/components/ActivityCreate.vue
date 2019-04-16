@@ -75,7 +75,7 @@ export default {
       },
       createActivity () {
         //debugger
-        createActivityAPI(this.newActivity).then(activity => {
+        createActivityAPI({...this.newActivity}).then(activity => {
             //debugger
             this.$emit('activityCreated', {...activity})
         })

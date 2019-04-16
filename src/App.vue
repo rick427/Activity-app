@@ -103,7 +103,7 @@ export default {
      .then(activities => {
        this.activities = activities
      })
-     
+
    this.categories = fetchCategories();
   },
 
@@ -121,8 +121,7 @@ export default {
       this.isTextDisplayed = !this.isTextDisplayed;
     },
     addActivity (newActivity){
-      //debugger
-        //this.activities[newActivity.id] = newActivity
+      
         Vue.set(this.activities, newActivity.id, newActivity)
         console.log(newActivity);
         
